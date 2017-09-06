@@ -1,0 +1,6 @@
+{
+  "extends": "motor-talk",
+  "env": {
+    "jest": true
+  }
+}

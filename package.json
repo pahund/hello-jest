@@ -1,0 +1,34 @@
+{
+  "name": "hello-jest",
+  "version": "1.0.0",
+  "description": "Some examples for using Jest for JavaScript unit tests",
+  "main": "src",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint src/**.js",
+    "format": "prettier src/**.js --write",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "author": "Patrick Hund <pahund@ebay.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-jest": "^21.0.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.6.1",
+    "eslint-config-motor-talk": "^4.0.2",
+    "eslint-plugin-react": "^7.3.0",
+    "husky": "^0.14.3",
+    "jest": "^21.0.1",
+    "lint-staged": "^4.1.2",
+    "prettier": "^1.6.1",
+    "regenerator-runtime": "^0.11.0"
+  }
+}
