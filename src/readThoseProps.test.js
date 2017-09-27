@@ -8,8 +8,8 @@ describe('When I call “read those props” with a path', () => {
                     return 'Lecker!!1!';
                 }
             }));
-            const readThoseProps = require('properties-reader');
-            result = readThoseProps('/some/path').get('wurst.senf');
+            const readThoseProps = require('./readThoseProps').default;
+            result = readThoseProps('/some/path');
         });
         describe('the result', () =>
             it('is the value of property wurst.senf', () => expect(result).toBe('Lecker!!1!')));
@@ -20,9 +20,9 @@ describe('When I call “read those props” with a path', () => {
             jest.doMock('properties-reader', () => () => {
                 throw new Error('WTF?!?');
             });
-            const readThoseProps = require('properties-reader');
+            const readThoseProps = require('./readThoseProps').default;
             try {
-                result = readThoseProps('/some/path').get('wurst.senf');
+                result = readThoseProps('/some/path');
             } catch (e) {
                 result = e.message;
             }
